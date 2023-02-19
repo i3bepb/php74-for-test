@@ -10,6 +10,6 @@ ENV LOCAL_USER_ID=${LOCAL_USER_ID_ARG} \
 
 RUN apk add --no-cache shadow \
     && groupmod -g ${LOCAL_GROUP_ID} www-data && usermod -u ${LOCAL_USER_ID} -g ${LOCAL_GROUP_ID} www-data \
-    && chown -R ${LOCAL_USER_ID}:${LOCAL_GROUP_ID} /home/www-data && chown -R ${LOCAL_USER_ID}:${LOCAL_GROUP_ID} /var/www/html
+    && chown -R ${LOCAL_USER_ID}:${LOCAL_GROUP_ID} /home/www-data
 
 USER www-data

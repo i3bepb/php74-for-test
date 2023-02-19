@@ -1,0 +1,16 @@
+FROM php:7.4.33-cli-alpine3.16
+
+ENV COMPOSER_MEMORY_LIMIT=-1 \
+    TZ=Asia/Yekaterinburg \
+    XDEBUG_MODE="develop,debug,coverage"
+
+RUN apk update && apk -U upgrade && apk add --no-cache ca-certificates tzdata $PHPIZE_DEPS \
+    && update-ca-certificates \
+    && pecl install xdebug-3.1.6 \
+    && docker-php-ext-enable xdebug
+
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php \
+    && php -r "unlink('composer-setup.php');" && mv composer.phar /usr/local/bin/composer && chmod a+x /usr/local/bin/composer \
+    && mkdir -p /home/www-data/application
+
+WORKDIR /home/www-data/application
