@@ -33,6 +33,30 @@ docker build -f php8028/Dockerfile.base -t i3bepb/php-for-test:1.1.0-php-8.0.28-
 docker push i3bepb/php-for-test:1.1.0-php-8.0.28-cli-alpine3.16
 ```
 
+## php 8.1.16
+
+1. Build from root directory
+```shell
+docker build -f php8116/Dockerfile.base -t i3bepb/php-for-test:1.0.0-php-8.1.16-cli-alpine3.17 .
+```
+
+2. Uploading the image to the repository
+```shell
+docker push i3bepb/php-for-test:1.0.0-php-8.1.16-cli-alpine3.17
+```
+
+## php 8.2.3
+
+1. Build from root directory
+```shell
+docker build -f php8203/Dockerfile.base -t i3bepb/php-for-test:1.0.0-php-8.2.3-cli-alpine3.17 .
+```
+
+2. Uploading the image to the repository
+```shell
+docker push i3bepb/php-for-test:1.0.0-php-8.2.3-cli-alpine3.17
+```
+
 # How use on local
 
 Build local image with local user (1000:1000)
