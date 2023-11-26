@@ -8,9 +8,9 @@ RUN apk update && apk -U upgrade && apk add --no-cache ca-certificates tzdata li
     && update-ca-certificates \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
-    && curl "http://pecl.php.net/get/xhprof-2.3.9.tgz" -fsL -o ./xhprof-2.3.9.tgz \
-    && mkdir /var/xhprof && tar xf ./xhprof-2.3.9.tgz -C /var/xhprof && cd /var/xhprof/xhprof-2.3.9/extension \
-    && phpize && ./configure && make && make install
+    && mkdir -p /home/www-data && curl "http://pecl.php.net/get/xhprof-2.3.9.tgz" -fsL -o /home/www-data/xhprof-2.3.9.tgz \
+    && cd /home/www-data/ && tar -xf xhprof-2.3.9.tgz && rm -f xhprof-2.3.9.tgz && mv "/home/www-data/xhprof-2.3.9" /home/www-data/xhprof \
+    && cd /home/www-data/xhprof/extension && phpize && ./configure && make && make install
 
 COPY ./php8212/xhprof.ini /usr/local/etc/php/conf.d/xhprof.ini
 
@@ -18,6 +18,6 @@ RUN docker-php-ext-enable xhprof \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" && mv composer.phar /usr/local/bin/composer && chmod a+x /usr/local/bin/composer \
     && mkdir -p /home/www-data/application \
-    && mkdir -m 777 /profiles
+    && mkdir -m 777 /home/www-data/xhprof/profiles
 
 WORKDIR /home/www-data/application
