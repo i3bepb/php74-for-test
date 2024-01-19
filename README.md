@@ -57,14 +57,14 @@ docker build -f php8203/Dockerfile.base -t i3bepb/php-for-test:1.0.2-php-8.2.3-c
 docker push i3bepb/php-for-test:1.0.2-php-8.2.3-cli-alpine3.17
 ```
 
-## php 8.2.12
+## php 8.2.12 xhprof
 
 Build from root directory
 ```shell
-docker build -f php8212/Dockerfile.base -t i3bepb/php-for-test:1.1.2-php-8.2.12-cli-alpine3.18 .
+docker build -f php8212/Dockerfile.base -t i3bepb/php-for-test:1.1.3-php-8.2.12-cli-alpine3.18 .
 ```
 ```shell
-docker push i3bepb/php-for-test:1.1.2-php-8.2.12-cli-alpine3.18
+docker push i3bepb/php-for-test:1.1.3-php-8.2.12-cli-alpine3.18
 ```
 
 # How use on local

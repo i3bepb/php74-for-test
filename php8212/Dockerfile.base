@@ -4,7 +4,7 @@ ENV COMPOSER_MEMORY_LIMIT=-1 \
     TZ=Asia/Yekaterinburg \
     XDEBUG_MODE="develop,debug,coverage"
 
-RUN apk update && apk -U upgrade && apk add --no-cache ca-certificates tzdata linux-headers $PHPIZE_DEPS \
+RUN apk update && apk -U upgrade && apk add --no-cache ca-certificates tzdata linux-headers graphviz $PHPIZE_DEPS \
     && update-ca-certificates \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
