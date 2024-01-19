@@ -45,26 +45,24 @@ docker build -f php8116/Dockerfile.base -t i3bepb/php-for-test:1.0.3-php-8.1.16-
 docker push i3bepb/php-for-test:1.0.3-php-8.1.16-cli-alpine3.17
 ```
 
-## php 8.2.3
-
-1. Build from root directory
-```shell
-docker build -f php8203/Dockerfile.base -t i3bepb/php-for-test:1.0.2-php-8.2.3-cli-alpine3.17 .
-```
-
-2. Uploading the image to the repository
-```shell
-docker push i3bepb/php-for-test:1.0.2-php-8.2.3-cli-alpine3.17
-```
-
-## php 8.2.12
+## php 8.2.15
 
 Build from root directory
 ```shell
-docker build -f php8212/Dockerfile.base -t i3bepb/php-for-test:1.0.3-php-8.2.12-cli-alpine3.18 .
+docker build -f php82/Dockerfile.base -t i3bepb/php-for-test:1.2.0-php-8.2.15-cli-alpine3.19 .
 ```
 ```shell
-docker push i3bepb/php-for-test:1.0.3-php-8.2.12-cli-alpine3.18
+docker push i3bepb/php-for-test:1.2.0-php-8.2.15-cli-alpine3.19
+```
+
+## php 8.3.2
+
+Build from root directory
+```shell
+docker build -f php83/Dockerfile.base -t i3bepb/php-for-test:1.1.5-php-8.3.2-cli-alpine3.19 .
+```
+```shell
+docker push i3bepb/php-for-test:1.1.5-php-8.3.2-cli-alpine3.19
 ```
 
 # How use on local

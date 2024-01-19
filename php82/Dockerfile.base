@@ -1,4 +1,4 @@
-FROM php:8.2.12-cli-alpine3.18
+FROM php:8.2.15-cli-alpine3.19
 
 ENV COMPOSER_MEMORY_LIMIT=-1 \
     TZ=Asia/Yekaterinburg \
